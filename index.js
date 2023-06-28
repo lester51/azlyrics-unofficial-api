@@ -7,7 +7,7 @@ const port = 3000
 app.get('/', (req, res) => {
     //res.send("This API was made by HackMeSenpai. Please refer to the documentation page for more details about API.")
     //res.status(200)
-    res.redirect("https://AzLyricsAPI.hackmesenpai1.repl.co/Docs")
+    res.redirect("https://azlyrics-unofficial-api.vercel.app/Docs")
 })
 
 app.get('/Docs', function(req, res) {
