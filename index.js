@@ -7,12 +7,11 @@ const port = 3000
 app.get('/', (req, res) => {
     //res.send("This API was made by HackMeSenpai. Please refer to the documentation page for more details about API.")
     //res.status(200)
-    res.sendFile('docu.html', {root: __dirname })
-    //res.redirect("https://azlyrics-unofficial-api.vercel.app/Docs")
+    res.redirect("https://azlyrics-unofficial-api.vercel.app/Docs")
 })
 
 app.get('/Docs', function(req, res) {
-    res.sendFile('docu.html', {root: __dirname })
+    res.sendFile('./docu.html', {root: __dirname })
 });
 
 app.get('/GetLyrics', function(req, res) {
