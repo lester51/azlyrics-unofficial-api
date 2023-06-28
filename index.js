@@ -1,6 +1,7 @@
 const axios = require('axios');
 const client = require("azlyrics-lyric-scraper");
-const express = require('express')
+const express = require('express');
+const path = require('path');
 const app = express()
 const port = 3000
 
@@ -11,7 +12,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/Docs', function(req, res) {
-    res.sendFile('docu.html',{ root: __dirname});
+    //res.sendFile('docu.html',{ root: __dirname});
+    res.sendFile(path.resolve('./docu.html'))
 })
 
 app.get('/GetLyrics', function(req, res) {
