@@ -1,29 +1,148 @@
 <!DOCTYPE html>
- <html>
- <head>
-	 <title>AzLyrics API Documentation</title>
-	 <meta charset="UTF-8"/>
-	 <link rel="stylesheet" href="" type="text/css"/>
- </head>
-	 <body>
-	<h1 id="azlyrics-lyric-scraper">API DOCUMENTATION</h1>
-<p><img src="https://www.azlyrics.com/az_logo_tr.png" alt="AzLyrics"></p>
-<p>AzLyrics API that returns a promise in JSON format. Another feature of this API is that it prevents the anti-bot detection so we can avoid human verifications such as captchas.</p>
-<h1 id="how-to-get-api-keys-">HOW TO GET API KEYS?</h1>
-<h3 id="simply-click-one-of-the-links-below-create-a-new-account-and-get-your-api-key-">Simply click one of the links below, create a new account and get your api key.</h3>
-<p><a href="https://www.scrapingbee.com">ScrapingBee</a><br>
-<a href="https://www.zenrows.com">ZenRows</a><br>
-<a href="https://scrapeops.io">ScrapeOps</a></p>
-<h1 id="api-base-url">API BASE URL</h1>
-<p><a href="https://azlyrics-unofficial-api.vercel.app">https://azlyrics-unofficial-api.vercel.app</a></p>
-<h1 id="api-routes">API ROUTES</h1>
-<h3 id="method-get">Method: GET</h3>
-<p><a href="https://azlyrics-unofficial-api.vercel.app/Docs">/Docs</a> -&gt; documentation page for this api. (no params.)</p>
-<h3 id="method-get">Method: GET</h3>
-<p><a href="https://azlyrics-unofficial-api.vercel.app/GetLyrics">/GetLyrics</a> -&gt; returns a json response that contains the lyrics.</p>
-<h4 id="-getlyrics-params">/GetLyrics Params</h4>
-<p>api -&gt; your api key<br>query -&gt; song/music title<br>url -&gt; song/music link(only azlyrics pages)</p>
-<h6 id="-getlyrics-api-your-key-query-song-name-">/GetLyrics?api=&quot;your-key&quot;&amp;query=&quot;song-name&quot;<br>or<br>/GetLyrics?api=&quot;your-key&quot;&amp;url=&quot;song/music-link&quot;</h6>
-
-	 </body>
- </html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AZLyrics Unofficial Documentation</title>
+        <meta name="og:description" content="Developed by Lester Navarra">
+        <meta name="description" content="Developed by Lester Navarra">
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+                user-select: none;
+                box-sizing: border-box;
+                border: 0;
+                outline: none;
+            }
+            body{
+                background-color: #eaeaea;
+                width: 100%;
+                height: 100vh;
+            }
+            .box{
+                margin: .75em;
+                background-image: linear-gradient(to top left, #ffffff, 75% #dedede);
+                border-radius: 1em;
+                padding: .5em;
+                box-shadow: 3px 3px 10px #aaaaaa, -10px -10px 10px #ffffff;
+            }
+            .box:nth-child(even){
+                margin: 2em .75em;
+            }
+            .header{
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+            }
+            .header > .title{
+                display: flex;
+                flex-direction: column;
+                margin: 0 1em;
+            }
+            .header > img{
+                width: 5%;
+                margin: 0 1em;
+            }
+            fieldset > legend {
+                margin-left: 2em;
+                font-weight: bolder;
+                font-variant: small-caps;
+            }
+            fieldset > blockquote{
+                padding-left: 1em;
+                margin: 0 1em;
+                border-left: 5px #aaaaaa solid;
+            }
+            fieldset > ul, fieldset > ul > li{
+                margin-left: 30px;
+                list-style: decimal;
+                color: #000000;
+                font-weight: bold;
+            }
+            fieldset > ul > a{
+                color: #000000;
+                text-decoration: none;
+            }
+            fieldset > blockquote > span{
+                font-weight: bold;
+                cursor: pointer;
+            }
+            fieldset > blockquote > .span{
+                display: block;
+                padding: .25em .5em;
+                width: 100%;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                background-color: transparent;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="header box">
+        <img src="https://www.azlyrics.com/az_logo_tr.png" alt="AzLyrics">
+        <div class="title">
+            <h1 id="azlyrics-lyric-scraper">API DOCUMENTATION</h1>
+            <h3>Developed by Lester Navarra</h3>
+        </div>
+    </div>
+    <fieldset class="box">
+        <legend id="what"><h3>What is AzLyrics API?</h3></legend>
+        <blockquote>AzLyrics API that returns a promise in JSON format. Another feature of this API is that it prevents the anti-bot detection so we can avoid human verifications such as captchas.</blockquote>
+    </fieldset>
+    <fieldset class="box">
+        <legend id="how"><h3>How to get API Keys?</h3></legend>
+        <blockquote>Simply click one of the links below, create a new account and get your api key.</blockquote>
+        <ul>
+            <a href="https://www.scrapingbee.com"><li>ScrapingBee</li></a>
+            <a href="https://www.zenrows.com"><li>ZenRows</li></a>
+            <a href="https://scrapeops.io"><li>ScrapeOps</li></a>
+        </ul>
+    </fieldset>
+    <fieldset class="box">
+        <legend id="based"><h3>API Base URL?</h3></legend>
+        <blockquote>Here's the base url of the api <span id="url-click" title="Click to copy">https://azlyrics-unofficial-api.vercel.app</span></blockquote>
+    </fieldset>
+    <fieldset class="box">
+        <legend id="routes"><h3>API Routes? [Get]</h3></legend>
+        <blockquote>The default or no parameter will return automatically to this documentation. The table below is the list of the parameters</blockquote>
+        <table>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>api</td>
+                <td>The value for this parameter is the api key where you can have it <a href="#how">here</a></td>
+            </tr>
+            <tr>
+                <td>query</td>
+                <td>Song title or music title where can be found in AzLyrics</td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>Song url where you got it.</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset class="box">
+        <legend id="sample"><h3>Examples</h3></legend>
+        <blockquote>
+            <span class="span" id="getSong" title="Click to copy">https://azlyrics-unofficial-api.vercel.app?api={api_key}&song={song_title}</span>
+            <span class="span" id="getUrl" title="Click to copy">https://azlyrics-unofficial-api.vercel.app?api={api_key}&url={song_url}</span>
+        </blockquote>
+    </fieldset>
+    </body>
+    <script type="text/javascript">
+        document.getElementById("url-click").onclick = () => {
+            navigator.clipboard.writeText(document.getElementById("url-click").textContent)
+        }
+        document.getElementById("getSong").onclick = () => {
+            navigator.clipboard.writeText(document.getElementById("getSong").textContent)
+        }
+        document.getElementById("getUrl").onclick = () => {
+            navigator.clipboard.writeText(document.getElementById("getUrl").textContent)
+        }
+    </script>
+</html>
