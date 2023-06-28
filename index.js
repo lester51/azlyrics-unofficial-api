@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/Docs', function(req, res) {
-    res.sendFile(`${__dirname}/docu.html`);
+    res.sendFile(__dirname+'docu.html');
 
 app.get('/GetLyrics', function(req, res) {
     let q = req.query.query;
