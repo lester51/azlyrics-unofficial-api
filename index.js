@@ -60,3 +60,5 @@ app.get('/GetLyrics', function(req, res) {
 app.listen(port, () => {
   console.log(`AzLyrics Server is listening on port ${port}`)
 })
+
+module.exports = app;
