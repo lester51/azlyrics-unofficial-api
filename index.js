@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/Docs', function(req, res) {
     //res.sendFile('docu.html',{ root: __dirname});
-    res.sendFile(path.resolve('./docu.html'))
+    res.sendFile(path.resolve('docu.html'))
 })
 
 app.get('/GetLyrics', function(req, res) {
